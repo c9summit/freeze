@@ -1,3 +1,5 @@
+#test
+
 #Harsahil Basra
 #07/06/22
 #Julie's Party Hire Code
@@ -16,16 +18,15 @@ root.geometry('400x200')
 def open():
     top = Toplevel()
     top.title('Customer Information')
-    Button(top, text="Quit", command=top.destroy).grid(column=3,row=0, sticky=N+E, padx=355)
+    Button(top, text="Quit", command=top.destroy) .grid(column=400, row=0, sticky=E, padx=365)
     top.geometry('400x200')
-    #Add customer name text
-    Label(top,text="Customer Full Name").grid(column=0, row=1)
-    #Add textbox for user to enter the customer's full name
-    entry_customername = Entry(top)
-    entry_customername.grid(column=1, row=1)
+
 
 #Create button to take user to 2nd window
 Button(root, text="Open Second Window", command=open).pack()
+
+#Creating code for labels on the second window
+
 
 
 mainloop()

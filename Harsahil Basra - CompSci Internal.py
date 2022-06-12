@@ -12,20 +12,29 @@ root = Tk()
 root.title("Julie's Hire Store")
 root.geometry('400x200')
 
+
+
 #Create 2nd window for entry
 def open():
-    top = Toplevel()
-    top.title('Customer Information')
-    Button(top, text="Quit", command=top.destroy).grid(column=3,row=0, sticky=N+E, padx=355)
-    top.geometry('400x200')
-    #Add customer name text
-    Label(top,text="Customer Full Name").grid(column=0, row=1)
-    #Add textbox for user to enter the customer's full name
-    entry_customername = Entry(top)
+    secondwindow = Toplevel()
+    secondwindow.title('Customer Information')
+    Button(secondwindow, text="Quit", command=secondwindow.destroy).grid(column=3,row=0, sticky=N+E, padx=355)
+    secondwindow.geometry('400x200')
+    #Customer's full name text
+    Label(secondwindow,text="Customer Full Name").grid(column=0, row=1)
+    #Create textbox for customer's fullname where the user can input 
+    entry_customername = Entry(secondwindow)
     entry_customername.grid(column=1, row=1)
+    #Receipt number's text
+    Label(secondwindow, text="Receipt Number").grid(column=0,row=2)
+    entry_receiptnumber = Entry(secondwindow)
+    entry_receiptnumber.grid(column=1, row=2)
+    #Item hired text
+
 
 #Create button to take user to 2nd window
 Button(root, text="Open Second Window", command=open).pack()
+
 
 
 mainloop()

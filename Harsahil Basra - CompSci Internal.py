@@ -33,6 +33,10 @@ def open():
     Label(secondwindow, text="Item Hired").grid(column=0, row=3)
     entry_itemhired = Entry(secondwindow)
     entry_itemhired.grid(column=1, row=3)
+    #Number Of Items Hired text
+    Label(secondwindow, text="No. Of Items Hired").grid(column=0, row=4)
+    entry_noofitems = Entry(secondwindow)
+    entry_noofitems.grid(column=1, row=4)
     
 
 

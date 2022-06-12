@@ -30,6 +30,11 @@ def open():
     entry_receiptnumber = Entry(secondwindow)
     entry_receiptnumber.grid(column=1, row=2)
     #Item hired text
+    Label(secondwindow, text="Item Hired").grid(column=0, row=3)
+    entry_itemhired = Entry(secondwindow)
+    entry_itemhired.grid(column=1, row=3)
+    
+
 
 
 #Create button to take user to 2nd window

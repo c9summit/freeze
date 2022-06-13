@@ -22,6 +22,7 @@ firstwindow.geometry('400x200')
 def windowtwo():
     secondwindow = Toplevel()
     secondwindow.title('Customer Information')
+    secondwindow.geometry('500x500')
     #Create empty labels, buttons, entryboxes and putting them in correct grid location
     #Customer's full name text
     Label(secondwindow,text="Customer Full Name").grid(column=0, row=2)
@@ -43,13 +44,11 @@ def windowtwo():
     #Add quit button
     def quit():
         firstwindow+secondwindow.destroy()
-    Button(secondwindow, text="Close", command=secondwindow.quit).grid(column=3,row=0, sticky=N+E, padx=45)
+    Button(secondwindow, text="Close", command=secondwindow.quit).grid(column=3,row=0)
     #Adding append button
-    Button(secondwindow, text="Append Info",
-           command=check) .grid(column=1, row=6)
-
-
-
+    Button(secondwindow, text="Append Info",command=check) .grid(column=2, row=6)
+    #Adding Print Button
+    Button(secondwindow, text="Print Info",command=check).grid(column=3, row=6)
 
 #Create button to take user to 2nd window
 Button(firstwindow, text="Open Second Window", command=windowtwo).pack()

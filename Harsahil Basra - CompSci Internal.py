@@ -5,6 +5,7 @@
 
 #import tkinter to make a GUI
 from tkinter import*
+from tkinter import ttk
 
 
 #Create 1st window for entry
@@ -14,11 +15,10 @@ root.geometry('400x200')
 
 
 
-#Create 2nd window for entry
-def open():
+#Create 2nd window and add its components
+def windowtwo():
     secondwindow = Toplevel()
     secondwindow.title('Customer Information')
-    Button(secondwindow, text="Quit", command=secondwindow.destroy).grid(column=3,row=0, sticky=N+E, padx=355)
     secondwindow.geometry('400x200')
     #Customer's full name text
     Label(secondwindow,text="Customer Full Name").grid(column=0, row=1)
@@ -37,12 +37,13 @@ def open():
     Label(secondwindow, text="No. Of Items Hired").grid(column=0, row=4)
     entry_noofitems = Entry(secondwindow)
     entry_noofitems.grid(column=1, row=4)
-    
+    #Add quit button
+    Button(secondwindow, text="Quit", command=secondwindow.destroy).grid(column=3,row=0, sticky=N+E, padx=45)
 
 
 
 #Create button to take user to 2nd window
-Button(root, text="Open Second Window", command=open).pack()
+Button(root, text="Open Second Window", command=windowtwo).pack()
 
 
 

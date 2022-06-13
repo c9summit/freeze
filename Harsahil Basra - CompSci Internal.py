@@ -9,7 +9,7 @@ from tkinter import*
 from tkinter import ttk
 
 #these are the global variables 
-global hireinfo, entry_customername, entry_receiptnumber, entry_itemhired, entry_noofitems, firstwindow, secondwindow
+global hireinfo, entry_customername, entry_receiptnumber, entry_itemhired, entry_noofitems, firstwindow, secondwindow, entry_delete
 
 #Create 1st window for entry
 firstwindow = Tk()
@@ -22,7 +22,7 @@ firstwindow.geometry('400x200')
 def windowtwo():
     secondwindow = Toplevel()
     secondwindow.title('Customer Information')
-    secondwindow.geometry('500x500')
+    secondwindow.geometry('500x200')
     #Create empty labels, buttons, entryboxes and putting them in correct grid location
     #Customer's full name text
     Label(secondwindow,text="Customer Full Name").grid(column=0, row=2)
@@ -46,9 +46,19 @@ def windowtwo():
         firstwindow+secondwindow.destroy()
     Button(secondwindow, text="Close", command=secondwindow.quit).grid(column=3,row=0)
     #Adding append button
-    Button(secondwindow, text="Append Info",command=check) .grid(column=2, row=6)
+    Button(secondwindow, text="Append Info",command=check) .grid(column=2, row=5)
     #Adding Print Button
-    Button(secondwindow, text="Print Info",command=check).grid(column=3, row=6)
+    Button(secondwindow, text="Print Info",command=check).grid(column=3, row=5)
+    #Adding row label and entrybox
+    Label(secondwindow, text="Row #").grid(column=0, row= 6)
+    entry_delete = Entry(secondwindow)
+    entry_delete.grid(column=1, row=6)
+    #Adding delete button
+    Button(secondwindow, text="Delete", command=check).grid(column=2,row=6)
+
+
+
+
 
 #Create button to take user to 2nd window
 Button(firstwindow, text="Open Second Window", command=windowtwo).pack()
